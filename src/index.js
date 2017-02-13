@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
 import Header from './components/header';
+import SearchBar from './components/search_bar';
 import RecipesList from './components/recipes_list';
 
 
@@ -20,6 +21,7 @@ class App extends Component {
 		return (
 			<div>
 				<Header />
+				<SearchBar />
 				<RecipesList />
 			</div>
 		)

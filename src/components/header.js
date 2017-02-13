@@ -4,8 +4,8 @@ import React, { Component } from 'react';
 const Header = (props) => {
 	return (
 		<div>
-			<div>lolas favorite recipes</div>
-			<div>her kitchen</div>
+			<div>lolas kusina</div>
+			<div>recipes from lolas recipe book</div>
 		</div>
 	)
 };
