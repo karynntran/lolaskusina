@@ -21,6 +21,7 @@ class App extends Component {
 	}
 
 	fetchData(){
+		var that = this;
 		fetch('http://localhost:8080/src/data/data.json', {
 			method: 'GET',
 			headers: {
@@ -36,7 +37,7 @@ class App extends Component {
 			return response.json();
 		})
 		.then(function(data) {
-			console.log(data)
+			that.setState({ data : data })
 		});
 	}
 
