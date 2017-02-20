@@ -1,5 +1,6 @@
 module.exports = {
   entry: [
+    'whatwg-fetch',
     './src/index.js'
   ],
   output: {
@@ -14,10 +15,15 @@ module.exports = {
       query: {
         presets: ['react', 'es2015', 'stage-1']
       }
-    }]
+    },
+      {
+          test: /\.json$/,
+          loader: 'json'
+      }
+    ]
   },
   resolve: {
-    extensions: ['', '.js', '.jsx']
+    extensions: ['', '.js', '.jsx', '.json']
   },
   devServer: {
     historyApiFallback: true,
