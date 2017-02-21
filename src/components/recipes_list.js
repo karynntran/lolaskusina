@@ -5,7 +5,6 @@ import RecipeItem from './recipe_item';
 
 
 const RecipesList = (props) => {
-	console.log(props)
 	const recipeItems = props.recipes.data.map((recipe) => {
 		return (
 			<RecipeItem

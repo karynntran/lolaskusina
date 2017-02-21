@@ -4,20 +4,19 @@ class SearchBar extends Component {
 	constructor(props) {
 		super(props);
 
-		this.state = { term: ' ' };
+		this.state = { term: '' };
 	}
 
-	filterList(){
-		
+	updateList(){
+		this.props.filterList(this.state.term);
 	}
 
 	render() {
 		return (
 			<div>
 				Find recipe: <input
-					// value={this.state.term} 
-					// onChange={event => this.setState({ term: event.target.value })} />
-					onChange={event => console.log(event.target.value)} />
+					value={this.state.term} 
+					onChange={event => this.setState({ term: event.target.value }, this.updateList)} />
 			</div>
 		)
 	}

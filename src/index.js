@@ -15,8 +15,11 @@ class App extends Component {
 	constructor(props) {
 		super(props);
 
-		this.state = {data: ''};
+		this.state = {
+			data: ''
+		};
 		this.loaded = false;
+		this._filterList = this._filterList.bind(this);
 
 		// console.log(this.state.recipes)
 	}
@@ -46,13 +49,24 @@ class App extends Component {
 		this.loaded = true;
 	}
 
+	_filterList(term){
+        //get query result
+        var queryResult=[];
+        data.data.map(function(recipe){
+            if(recipe.recipeName.toLowerCase().indexOf(term)!=-1)
+            queryResult.push(recipe);
+        });
+        this.setState({ data: queryResult })
+        console.log(this.state)
+	};
+
 	render(){
 		if (this.loaded === true) {
 			return (
 				<div>
 					<Header />
-					<SearchBar />
-					<RecipesList recipes={ this.state } />
+					<SearchBar filterList={this._filterList}/>
+					<RecipesList recipes={this.state} />
 				</div>
 			)
 		} else {
