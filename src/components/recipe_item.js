@@ -14,15 +14,20 @@ class RecipeItem extends Component {
 
 	render(){
 		const recipeName = this.props.recipe.recipeName,
-			recipeIngredients = this.props.recipe.ingredients,
+			recipeIngredients = this.props.recipe.ingredients.split("\n").map(function(text) { return ( <li> {text} <br/> </li> ) }),
 			recipeProcedure = this.props.recipe.procedure;
 		return (
 			<li className={["list-group-item", this.state.active].join(" ")} onClick={this._goToActiveView}>
 				<div>
 					<div className="recipe-name">{ recipeName }</div>
 					<div className="recipe-info">
-						<div className="recipe-ingredients">Ingredients: { recipeIngredients }</div>
-						<div className="recipe-procedure">Procedure: { recipeProcedure }</div>
+						<div className="recipe-ingredients">Ingredients:
+							<ul className="ingredients">
+									{ recipeIngredients }
+							</ul>
+						</div>
+						<div className="recipe-procedure">
+							Procedure: { recipeProcedure }</div>
 					</div>
 				</div>
 			</li>
