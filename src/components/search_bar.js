@@ -7,6 +7,10 @@ class SearchBar extends Component {
 		this.state = { term: ' ' };
 	}
 
+	filterList(){
+		
+	}
+
 	render() {
 		return (
 			<div>

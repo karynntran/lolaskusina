@@ -15,7 +15,8 @@ class App extends Component {
 	constructor(props) {
 		super(props);
 
-		this.state = {data: 'HI'};
+		this.state = {data: ''};
+		this.loaded = false;
 
 		// console.log(this.state.recipes)
 	}
@@ -31,28 +32,35 @@ class App extends Component {
 		})
 		.then(function(response) {
 			if (response.status >= 400) {
-				console.log(response)
 				throw new Error("Bad response from server");
 			}
 			return response.json();
 		})
 		.then(function(data) {
-			that.setState({ data : data })
+			that.setState({ data : data.data })
 		});
 	}
 
 	componentDidMount(){
 		this.fetchData();
+		this.loaded = true;
 	}
 
 	render(){
-		return (
-			<div>
-				<Header />
-				<SearchBar />
-				<RecipesList/>
-			</div>
-		)
+		if (this.loaded === true) {
+			return (
+				<div>
+					<Header />
+					<SearchBar />
+					<RecipesList recipes={ this.state } />
+				</div>
+			)
+		} else {
+			return (
+				<div>Loading...</div>
+			)
+		}
+
 	}
 }
 
