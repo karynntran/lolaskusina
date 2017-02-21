@@ -14,7 +14,7 @@ class RecipeItem extends Component {
 
 	render(){
 		const recipeName = this.props.recipe.recipeName,
-			recipeIngredients = this.props.recipe.ingredients.split("\n").map(function(text) { return ( <li> {text} <br/> </li> ) }),
+			recipeIngredients = this.props.recipe.ingredients.split("\n").map(function(text) { return ( <li key={text}> {text} <br/> </li> ) }),
 			recipeProcedure = this.props.recipe.procedure;
 		return (
 			<li className={["list-group-item", this.state.active].join(" ")} onClick={this._goToActiveView}>

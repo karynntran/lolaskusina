@@ -4,8 +4,8 @@ import React, { Component } from 'react';
 
 const Header = (props) => {
 	return (
-		<div>
-			<div className="header-title">lolas kusina</div>
+		<div className="header section">
+			<div className="header-title">lola&#39;s kusina</div>
 			<div className="sub-title">recipes from lolas recipe book</div>
 		</div>
 	)

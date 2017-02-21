@@ -14,7 +14,7 @@ class SearchBar extends Component {
 	render() {
 		return (
 			<div>
-				Find recipe: <input
+				Search By Recipe: <input
 					value={this.state.term} 
 					onChange={event => this.setState({ term: event.target.value }, this.updateList)} />
 			</div>

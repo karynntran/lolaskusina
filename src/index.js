@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import data from './data/data';
 
 import Header from './components/header';
+import Navigation from './components/navigation';
 import SearchBar from './components/search_bar';
 import RecipesList from './components/recipes_list';
 
@@ -67,7 +68,7 @@ class App extends Component {
 			return (
 				<div>
 					<Header />
-					<SearchBar filterList={this._filterList}/>
+					<Navigation filterList={this._filterList}/>
 					<RecipesList recipes={this.state} />
 				</div>
 			)
