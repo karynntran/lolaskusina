@@ -15,10 +15,12 @@ class RecipeItem extends Component {
 	render(){
 		const recipeName = this.props.recipe.recipeName,
 			recipeIngredients = this.props.recipe.ingredients.split("\n").map(function(text) { return ( <li key={text}> {text} <br/> </li> ) }),
-			recipeProcedure = this.props.recipe.procedure;
+			recipeProcedure = this.props.recipe.procedure,
+			recipeCategory = this.props.recipe.category;
 		return (
 			<li className={["list-group-item", this.state.active].join(" ")} onClick={this._goToActiveView}>
-				<div>
+				<div className={[ "category-icon", recipeCategory ].join(" ")}></div>
+				<div className="recipe-list-container">
 					<div className="recipe-name">{ recipeName }</div>
 					<div className="recipe-info">
 						<div className="recipe-ingredients">Ingredients:

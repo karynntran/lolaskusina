@@ -15,7 +15,7 @@ const RecipesList = (props) => {
 
 	return (
 		<div className="recipes-list section">
-			<ul className="col-md-4 list-group">
+			<ul className="list-group">
 				{ recipeItems }
 			</ul>
 		</div>

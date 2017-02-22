@@ -43,6 +43,52 @@ ul {
 }
 
 /*RECIPE ITEM STYLES */
+.category-icon {
+	width: 3em;
+	height: 3em;
+	border-radius: 50%;
+}
+.pork {
+	background: url('../images/pork.png') no-repeat;
+	background-size: contain;
+	background-position: 100%;
+}
+.poultry {
+	background: url('../images/poultry.png') no-repeat;
+	background-size: contain;
+	background-position: 100%;
+}
+.seafood {
+	background: url('../images/seafood.png') no-repeat;
+	background-size: contain;
+	background-position: 100%;
+}
+.beef {
+	background: url('../images/beef.png') no-repeat;
+	background-size: contain;
+	background-position: 100%;
+}
+.vegetables {
+	background: url('../images/vegetables.png') no-repeat;
+	background-size: contain;
+	background-position: 100%;
+}
+.noodles {
+	background: url('../images/noodles.png') no-repeat;
+	background-size: contain;
+	background-position: 100%;
+}
+.dessert {
+	background: url('../images/dessert.png') no-repeat;
+	background-size: contain;
+	background-position: 100%;
+}
+.recipe-list-container {
+
+}
+.recipe-name {
+	font-family: 'Homemade Apple', cursive;
+}
 .recipe-info {
 	opacity: 0;
 	height: 0;
@@ -52,7 +98,8 @@ ul {
 
 li.true .recipe-info {
 	opacity: 1;
-	height: 15em;
+	height: 20em;
+	overflow-y: scroll;
 	transition: height .2s ease-in;
 }
 
