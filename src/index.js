@@ -29,7 +29,7 @@ class App extends Component {
 
 	fetchData(){
 		var that = this;
-		fetch('http://localhost:8080/src/data/data.json', {
+		fetch('../../src/data/data.json', {
 			method: 'GET',
 			headers: {
 				'Accept': 'application/json',
