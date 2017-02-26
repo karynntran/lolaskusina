@@ -77,19 +77,19 @@ ul {
 .bg1 {
 	background: url('../images/bg1.jpg') no-repeat;
 	background-size: cover;
-	background-position: 100%;
+	background-position: 50%;
 	animation: fadein 9s ease-in infinite;
 }
 .bg2 {
 	background: url('../images/bg2.jpg') no-repeat;
 	background-size: cover;
-	background-position: 100%;
+	background-position: 50%;
 	animation: fadein 9s 3s ease-in infinite;
 }
 .bg3 {
 	background: url('../images/bg3.jpg') no-repeat;
 	background-size: cover;
-	background-position: 100%;
+	background-position: 50%;
 	animation: fadein 9s 6s ease-in infinite;	
 }
 .header-title {
@@ -100,17 +100,31 @@ ul {
 .sub-title {
 	position: relative;
 }
-.category {
-	list-style-type: none;
-	display: inline;
-	margin-right: 1em;
-	position: relative;
-}
 
 /*SEARCH STYLES */
 
 /*NAVIGATION STYLES */
-
+.category-filter {
+	position: relative;
+	margin: 1em 0;
+}
+.category {
+	list-style-type: none;
+	float: left;
+	margin-right: 1em;
+	position: relative;
+	z-index: 10;
+}
+.category:hover {
+	background: gray;
+}
+.see-all {
+	float: left;
+	margin-right: 2em;
+	border: 1px solid black;
+	padding: 0 1em;
+	cursor: pointer;
+}
 .navigation {
 	position: relative;
 	z-index: 5;
@@ -171,7 +185,8 @@ ul {
 	font-family: 'Homemade Apple', cursive;
 	text-align: center;
 	min-height: 4em;
-	line-height: 5em;
+	position: relative;
+	top: 2em;
 }
 .recipe-info {
 	opacity: 0;
@@ -192,5 +207,15 @@ ul {
 	overflow-y: auto;
 	transition: height .2s ease-in;
 
+}
+
+@media all and (max-width: 767px) {
+	.see-all {
+		float: none;
+		width: 5em;
+	}
+	.recipe-li {
+		width: 100%;
+	}
 }
 

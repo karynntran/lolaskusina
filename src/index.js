@@ -23,6 +23,7 @@ class App extends Component {
 		};
 		this.loaded = false;
 		this._filterList = this._filterList.bind(this);
+		this._filterByCategory = this._filterByCategory.bind(this);
 
 		// console.log(this.state.recipes)
 	}
@@ -63,12 +64,25 @@ class App extends Component {
         console.log(this.state)
 	};
 
+	_filterByCategory(category){
+		if (category !== 'all') {
+	        var queryResult=[];
+	        data.data.map(function(recipe){
+	            if(recipe.category.toLowerCase() === category)
+	            queryResult.push(recipe);
+	        });
+	        this.setState({ data: queryResult })
+		} else {
+			this.setState({ data: data.data })
+		}
+	};
+
 	render(){
 		if (this.loaded === true) {
 			return (
 				<div>
 					<Header />
-					<Navigation filterList={this._filterList}/>
+					<Navigation filterList={this._filterList} filterByCategory={this._filterByCategory}/>
 					<RecipesList recipes={this.state} />
 				</div>
 			)
