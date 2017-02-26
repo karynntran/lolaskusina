@@ -18,7 +18,7 @@ class RecipeItem extends Component {
 			recipeProcedure = this.props.recipe.procedure,
 			recipeCategory = this.props.recipe.category;
 		return (
-			<li className={["list-group-item", this.state.active].join(" ")} onClick={this._goToActiveView}>
+			<li className={["list-group-item recipe-li", this.state.active].join(" ")} onClick={this._goToActiveView}>
 				<div className={[ "category-icon", recipeCategory ].join(" ")}></div>
 				<div className="recipe-list-container">
 					<div className="recipe-name">{ recipeName }</div>

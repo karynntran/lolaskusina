@@ -1,7 +1,40 @@
 
+@keyframes fadein {
+	0% { 
+		opacity: 0;
+	}
+	11% {
+		opacity: 1;
+	}
+	22% {
+		opacity: 1;
+	}
+	33% {
+		opacity: 1;
+	}
+	44% {
+		opacity: 0;
+	}
+	55% {
+		opacity: 0;
+	}
+	66% {
+		opacity: 0;
+	}
+	77% {
+		opacity: 0;
+	}
+	88% {
+		opacity: 0;
+	}
+	100% {
+		 opacity: 0;
+	}
+}
 
 body {
 	font-size: 10px;
+	font-family: 'Josefin Sans', sans-serif !important;
 }
 .container {
 	font-size: 1.2em !important;
@@ -28,18 +61,59 @@ ul {
 
 /*NAVIGATION*/
 .header {
-	background: #f9a7c9;
+	background: #fcfcfc;
 	height: 10em;
-	color: #ffffff;
+	color: black;
+	height: 20em;
+}
+.bg {
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	height: 20em;
+}
+.bg1 {
+	background: url('../images/bg1.jpg') no-repeat;
+	background-size: cover;
+	background-position: 100%;
+	animation: fadein 9s ease-in infinite;
+}
+.bg2 {
+	background: url('../images/bg2.jpg') no-repeat;
+	background-size: cover;
+	background-position: 100%;
+	animation: fadein 9s 3s ease-in infinite;
+}
+.bg3 {
+	background: url('../images/bg3.jpg') no-repeat;
+	background-size: cover;
+	background-position: 100%;
+	animation: fadein 9s 6s ease-in infinite;	
 }
 .header-title {
 	font-family: 'Homemade Apple', cursive;
 	font-size: 2em;
+	position: relative;
+}
+.sub-title {
+	position: relative;
 }
 .category {
 	list-style-type: none;
 	display: inline;
 	margin-right: 1em;
+	position: relative;
+}
+
+/*SEARCH STYLES */
+
+/*NAVIGATION STYLES */
+
+.navigation {
+	position: relative;
+	z-index: 5;
 }
 
 /*RECIPE ITEM STYLES */
@@ -47,6 +121,9 @@ ul {
 	width: 3em;
 	height: 3em;
 	border-radius: 50%;
+    margin: 0 auto -1.5em auto;
+    z-index: 2;
+    position: relative;
 }
 .pork {
 	background: url('../images/pork.png') no-repeat;
@@ -84,10 +161,17 @@ ul {
 	background-position: 100%;
 }
 .recipe-list-container {
-
+	border: 1px solid #ccc;
+	padding: .5em;
+}
+.recipe-list-container:hover {
+	background: #fcfcfc;
 }
 .recipe-name {
 	font-family: 'Homemade Apple', cursive;
+	text-align: center;
+	min-height: 4em;
+	line-height: 5em;
 }
 .recipe-info {
 	opacity: 0;
@@ -95,11 +179,18 @@ ul {
 	position: relative;
 	transition: height .2s ease-in;
 }
+.recipe-li {
+	width: 50%;
+    position: relative;
+    float: left;
+    border: none !important;
+}
 
-li.true .recipe-info {
+.recipe-li.true .recipe-info {
 	opacity: 1;
 	height: 20em;
-	overflow-y: scroll;
+	overflow-y: auto;
 	transition: height .2s ease-in;
+
 }
 
