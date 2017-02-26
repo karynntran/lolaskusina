@@ -57,7 +57,7 @@ class App extends Component {
         //get query result
         var queryResult=[];
         data.data.map(function(recipe){
-            if(recipe.recipeName.toLowerCase().indexOf(term)!=-1)
+            if(recipe.recipeName.toLowerCase().indexOf(term.toLowerCase())!=-1)
             queryResult.push(recipe);
         });
         this.setState({ data: queryResult })
@@ -68,7 +68,7 @@ class App extends Component {
 		if (category !== 'all') {
 	        var queryResult=[];
 	        data.data.map(function(recipe){
-	            if(recipe.category.toLowerCase() === category)
+	            if(recipe.category.toLowerCase() === category.toLowerCase())
 	            queryResult.push(recipe);
 	        });
 	        this.setState({ data: queryResult })
