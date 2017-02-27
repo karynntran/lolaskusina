@@ -83,19 +83,19 @@ ul {
 	background: url('../images/bg1.jpg') no-repeat;
 	background-size: cover;
 	background-position: 50%;
-	animation: fadein 9s ease-in infinite;
+	animation: fadein 9s linear infinite;
 }
 .bg2 {
 	background: url('../images/bg2.jpg') no-repeat;
 	background-size: cover;
 	background-position: 50%;
-	animation: fadein 9s 3s ease-in infinite;
+	animation: fadein 9s 3s linear infinite;
 }
 .bg3 {
 	background: url('../images/bg3.jpg') no-repeat;
 	background-size: cover;
 	background-position: top;
-	animation: fadein 9s 6s ease-in infinite;	
+	animation: fadein 9s 6s linear infinite;	
 }
 .header-title {
 	font-family: 'Homemade Apple', cursive;
