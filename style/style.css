@@ -67,6 +67,10 @@ ul {
 	color: black;
 	height: 20em;
 }
+.header,
+.sub-title {
+	text-shadow: 0 0 0.2em #fff;
+}
 .bg {
 	width: 100%;
 	position: absolute;
@@ -140,6 +144,7 @@ ul {
 	position: fixed;
 	top: 0;
 	opacity: .9;
+	transition: all .25s ease-in;
 }
 
 /*RECIPE ITEM STYLES */
@@ -224,9 +229,18 @@ ul {
 }
 
 @media all and (max-width: 767px) {
+	.bg1 {
+		background-position: left !important;
+	}
 	.see-all {
 		float: none;
 		width: 5em;
+	}
+	.navigation {
+		height: 10em;
+	}
+	.category {
+		height: 2em;
 	}
 	.recipe-li {
 		width: 100%;
