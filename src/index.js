@@ -60,17 +60,19 @@ class App extends Component {
 	}
 
 	handleScroll(e){
-		if (window.scrollY > 100) {
-		    console.log("should lock");
-		    this.setState({
-		      scrollingLock: true
-		    });
-		  } else if (window.scrollY < 100) {
-		    console.log("not locked" );
-		    this.setState({
-		      scrollingLock: false
-		    });
-		  }
+		if (window.screen.width > 480) {
+			if (window.scrollY > 100) {
+			    console.log("should lock");
+			    this.setState({
+			      scrollingLock: true
+			    });
+			} else if (window.scrollY < 100) {
+				console.log("not locked" );
+				this.setState({
+				  scrollingLock: false
+				});
+			}
+		}
 	}
 
 	_filterList(term){

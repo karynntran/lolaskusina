@@ -10,7 +10,7 @@ class Navigation extends Component {
 	}
 
 	render(){
-		const recipeCategories = ["all", "beef", "pork", "vegetable", "poultry", "dessert", "seafood", "noodles"];
+		const recipeCategories = ["all", "beef", "pork", "vegetables", "poultry", "dessert", "seafood", "noodles"];
 
 		const categories = recipeCategories.map((category) => {
 			return (
