@@ -23,13 +23,13 @@ class RecipeItem extends Component {
 				<div className="recipe-list-container">
 					<div className="recipe-name">{ recipeName }</div>
 					<div className="recipe-info">
-						<div className="recipe-ingredients">Ingredients:
+						<div className="recipe-ingredients"><span className="keynames">Ingredients:</span>
 							<ul className="ingredients">
 									{ recipeIngredients }
 							</ul>
 						</div>
 						<div className="recipe-procedure">
-							Procedure: { recipeProcedure }</div>
+							<span className="keynames">Procedure:</span> { recipeProcedure }</div>
 					</div>
 				</div>
 			</li>

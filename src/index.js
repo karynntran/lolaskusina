@@ -10,8 +10,6 @@ import RecipesList from './components/recipes_list';
 
 
 
-
-
 // create a new component. this component should produce some html
 
 class App extends Component {
@@ -19,11 +17,13 @@ class App extends Component {
 		super(props);
 
 		this.state = {
-			data: ''
+			data: '',
+			scrollingLock: false
 		};
 		this.loaded = false;
 		this._filterList = this._filterList.bind(this);
 		this._filterByCategory = this._filterByCategory.bind(this);
+		this.handleScroll = this.handleScroll.bind(this);
 
 		// console.log(this.state.recipes)
 	}
@@ -51,6 +51,26 @@ class App extends Component {
 	componentDidMount(){
 		this.fetchData();
 		this.loaded = true;
+		window.addEventListener('scroll', this.handleScroll);
+
+	}
+
+	componentWillUnmount() {
+	    window.removeEventListener('scroll', this.handleScroll);
+	}
+
+	handleScroll(e){
+		if (window.scrollY > 100) {
+		    console.log("should lock");
+		    this.setState({
+		      scrollingLock: true
+		    });
+		  } else if (window.scrollY < 100) {
+		    console.log("not locked" );
+		    this.setState({
+		      scrollingLock: false
+		    });
+		  }
 	}
 
 	_filterList(term){
@@ -82,7 +102,10 @@ class App extends Component {
 			return (
 				<div>
 					<Header />
-					<Navigation filterList={this._filterList} filterByCategory={this._filterByCategory}/>
+					<Navigation
+						filterList={this._filterList}
+						filterByCategory={this._filterByCategory}
+						status={this.state.scrollingLock ? "fixed" : ""}/>
 					<RecipesList recipes={this.state} />
 				</div>
 			)

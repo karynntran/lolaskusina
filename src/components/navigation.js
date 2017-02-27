@@ -10,7 +10,7 @@ class Navigation extends Component {
 	}
 
 	render(){
-		const recipeCategories = ["beef", "pork", "vegetable", "poultry", "dessert", "seafood"];
+		const recipeCategories = ["all", "beef", "pork", "vegetable", "poultry", "dessert", "seafood", "noodles"];
 
 		const categories = recipeCategories.map((category) => {
 			return (
@@ -19,10 +19,9 @@ class Navigation extends Component {
 		});
 
 		return (
-			<div className="navigation section">
+			<div className={["navigation section", this.props.status].join(" ")}>
 				<SearchBar filterList={this.props.filterList}/>
 				<div className="category-filter">
-					<div className="see-all" onClick={event=> this.props.filterByCategory('all')}>see all</div>
 					<ul className="recipe-categories">
 						{categories}
 					</ul>
