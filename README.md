@@ -1,25 +1,22 @@
-# ReduxSimpleStarter
+# Lola's Kusina
 
-Interested in learning [Redux](https://www.udemy.com/react-redux/)?
+A digital recipe box preserving 68 of my grandmother's handwritten Filipino recipes — from Chicken Tinola to Leche Flan. 
 
-###Getting Started###
+## Features
 
-There are two methods for getting started with this repo.
+- Browse all 68 recipes by category (Manok, Baboy, Baka, Isda, Gulay, Pancit, Panghimagas, Sarsa)
+- Search by recipe name or ingredient
+- Recipe detail modal with ingredients (Sangkap) and procedure (Paraan)
+- Print a single recipe card or all recipes at once
 
-####Familiar with Git?#####
-Checkout this repo, install dependencies, then start the gulp process with the following:
+## Stack
 
-```
-	> git clone git@github.com:StephenGrider/ReduxSimpleStarter.git
-	> cd ReduxSimpleStarter
-	> npm install
-	> npm start
-```
+Vite + React, deployed on Netlify. No backend — recipes are static data sourced from the original handwritten collection.
 
-####Not Familiar with Git?#####
-Click [here](https://github.com/StephenGrider/ReactStarter/releases) then download the .zip file.  Extract the contents of the zip file, then open your terminal, change to the project directory, and:
+## Development
 
-```
-	> npm install
-	> npm start
+```bash
+npm install
+npm run dev      # http://localhost:5173/lolaskusina/
+npm run build    # outputs to dist/
 ```
