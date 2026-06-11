@@ -1,0 +1,22 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# SPA fallback — serves index.html for all routes under /lolaskusina/
+[[redirects]]
+  from = "/lolaskusina/*"
+  to = "/lolaskusina/index.html"
+  status = 200
+
+# Root redirect to app
+[[redirects]]
+  from = "/"
+  to = "/lolaskusina/"
+  status = 302
+
+# ── karynntran.com proxy (add this block to karynntran.com's netlify.toml) ──
+# [[redirects]]
+#   from   = "/lolaskusina/*"
+#   to     = "https://<this-site>.netlify.app/lolaskusina/:splat"
+#   status = 200
+#   force  = true
